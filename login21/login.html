@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="stylelogin.css">
+    <title>Login Page </title>
+    <style>/* أضف هذا الكود إلى ملف stylelogin.css */
+
+        .error-message {
+            color: #ff3333;
+            font-size: 12px;
+            margin-top: -5px;
+            margin-bottom: 10px;
+            text-align: left;
+            height: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        /* تعديل لتناسب مساحة رسائل الخطأ */
+        .form-container form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .form-container input {
+            margin-bottom: 5px;
+        }</style>
+</head>
+
+<body>
+
+    <div class="container" id="container">
+        <div class="form-container sign-up">
+            <form>
+                <h1>Registration</h1>
+                <input type="text" placeholder="Username" name="username" required minlength="6">
+                <input type="email" placeholder="Email" name="email" required>
+                <input type="password" placeholder="Password" name="password" required minlength="8"  pattern="(?=.*[\W_]).{8,}"  title="Password must be at least 8 characters long and contain at least one special character.">
+                <input type="text" placeholder="National ID" name="nationalID" required pattern="\d{14}"  title="National ID must be exactly 14 digits.">
+                <button>Register</button>
+                
+                <span style="font-size:13px;">Or Register with social platforms</span>
+                <div class="social-icons">
+                    <a href="https://accounts.google.com/signin/oauth" class="icon" ><i class="fa-brands fa-google-plus-g"></i></a>
+                    <a href="https://www.facebook.com/login.php/oauth" class="icon" ><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://github.com/login/oauth" class="icon" ><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/login/oauth" class="icon" ><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                
+            </form>
+        </div>
+        <div class="form-container sign-in">
+            <form>
+                <h1>Login</h1>
+                <br>
+                <input type="text" placeholder="Username" name="username" required minlength="6">
+                <input type="password" placeholder="Password" name="password" required minlength="8"  pattern="(?=.*[\W_]).{8,}"  title="Password must be at least 8 characters long and contain at least one special character.">
+                <a href="forgetpassword.html" style="color: blue;">Forget Your Password?</a>
+                <button>Login</button>
+                <br>
+                <span style="font-size:13px;">Or Login with social platforms</span>
+                <div class="social-icons">
+                    <a href="https://accounts.google.com/signin/oauth" class="icon" ><i class="fa-brands fa-google-plus-g"></i></a>
+                    <a href="https://www.facebook.com/login.php/oauth" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://github.com/login/oauth" class="icon" ><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/login/oauth" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </form>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Welcome Back!</h1>
+                    <p>Already have an account?</p>
+                    <button class="hidden" id="login">Login</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Hello,Welcome!</h1>
+                    <p>Don't have an account?</p>
+                    <button class="hidden" id="register">Register</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scriptlogin.js"></script>
+    
+</body>
+
+</html>
